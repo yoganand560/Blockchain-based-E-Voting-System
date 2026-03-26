@@ -1,5 +1,5 @@
 # ⛓ BlockVote — Blockchain-Based E-Voting System
-![image alt](Blockchain-based-E-Voting system.png)
+![image alt](Google_Play_store-AnalysisImage_tzv9qztzv9qztzv9.png)
 > A secure, transparent, and tamper-proof electronic voting system built on blockchain technology.
 
 ---
