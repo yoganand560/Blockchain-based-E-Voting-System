@@ -1,5 +1,7 @@
 # ⛓ BlockVote — Blockchain-Based E-Voting System
+
 ![image alt](https://github.com/yoganand560/Blockchain-based-E-Voting-System/blob/e66cfc133d84fade200c660f9af83b7fcda780d7/Blockchain-based-E-Voting%20system.png)
+
 > A secure, transparent, and tamper-proof electronic voting system built on blockchain technology.
 
 ---
@@ -38,6 +40,32 @@ blockvote/
 ├── blockchain_evoting.html   # Interactive frontend demo (browser)
 └── README.md                 # This file
 ```
+
+---
+
+## ✨ What's New — Election Setup Page
+
+A **⚙️ Setup** button has been added to the header of the frontend. It opens a setup modal that lets you fully configure the election **before it starts** — without changing anything about the core voting system.
+
+### What you can configure:
+
+#### 👤 Number of Voters (1–100)
+- Use the **+/−** buttons to increase or decrease the voter count one at a time
+- Or use the **quick preset buttons**: 5 · 10 · 25 · 50 · 100
+- Voters are automatically registered as `VOTER001`, `VOTER002`, … up to your chosen count
+
+#### 🏛 Parties (1–10)
+- **Add** new parties (up to a maximum of 10)
+- **Remove** any party using the 🗑 button
+- For each party you can customise:
+  - 🎨 **Colour** — click the colour dot to open a colour picker
+  - ✏️ **Name** — edit the party name inline
+  - 🖼 **Logo / Symbol** — click the logo button to pick an emoji from the grid, or type any character
+
+#### ✓ Apply & Start Election
+- Clicking **Apply & Start Election** commits all changes, resets the blockchain, and rebuilds the voting UI instantly with your new configuration
+
+> ⚠️ Applying setup resets the election and clears all previously cast votes.
 
 ---
 
@@ -118,6 +146,8 @@ Chain integrity: Chain is valid
 
 Simply open `blockchain_evoting.html` in any modern browser — no server needed.
 
+To configure the election before voting, click the **⚙️ Setup** button in the top-right corner of the page.
+
 ---
 
 ## 🧱 Class Architecture
@@ -154,14 +184,14 @@ Blockchain(difficulty=2)
 
 ## 🗳 Registered Voters (Demo)
 
-The demo system includes 10 pre-registered voters:
+The default demo includes 10 pre-registered voters:
 
 ```
 VOTER001  VOTER002  VOTER003  VOTER004  VOTER005
 VOTER006  VOTER007  VOTER008  VOTER009  VOTER010
 ```
 
-You can register additional voters programmatically:
+You can change the voter count (1–100) at any time via the **⚙️ Setup** page, or register additional voters programmatically in the Python backend:
 ```python
 blockchain.register_voter("VOTER011")
 ```
@@ -186,14 +216,16 @@ print(msg)  # → "Block 1 hash mismatch"
 
 ---
 
-## 📊 Candidate Parties
+## 📊 Candidate Parties (Default)
 
-| Party | Symbol |
-|-------|--------|
-| Party Alpha | α |
-| Party Beta | β |
-| Party Gamma | γ |
-| Party Delta | δ |
+| Party | Symbol | Colour |
+|-------|--------|--------|
+| Party Alpha | α | 🟢 `#00d4aa` |
+| Party Beta  | β | 🔵 `#3b82f6` |
+| Party Gamma | γ | 🟡 `#f59e0b` |
+| Party Delta | δ | 🟣 `#a78bfa` |
+
+> Parties, their names, symbols, and colours can all be changed from the **⚙️ Setup** page before the election begins.
 
 ---
 
@@ -217,6 +249,7 @@ print(msg)  # → "Block 1 hash mismatch"
 - ✅ Data anonymization
 - ✅ Chain integrity verification
 - ✅ Frontend-backend system design
+- ✅ Dynamic election configuration (Setup page)
 
 ---
 
